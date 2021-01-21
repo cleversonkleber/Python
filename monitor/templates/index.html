@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta  name="viewport"
+           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<h1 style="text-align; center;">Estudos Crud</h1>
+<div class="container">
+   <div class="col-xs-12">
+            <a href="/add">Adicionar estudandte</a>
+        </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>nome</th>
+                    <th>idade</th>
+                    <th>Acoes</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                    {% for i in estudantes %}
+                     <tr>
+                         <td>{{i.nome}}</td>
+                         <td>{{i.idade}}</td>
+
+                        <td>
+                             <a href="/edit/{{i.id}}">Editar</a> |
+                            <a href="/delete/{{ i.id}}">Excluir</a>
+                        </td>
+                     </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
